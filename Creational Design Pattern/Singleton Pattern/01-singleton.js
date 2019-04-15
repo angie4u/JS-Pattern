@@ -28,6 +28,8 @@ var mySingleton = (function(){
     }
 
 })();
+// it initiate once and later only shows it as a reference
+// so that's why the random numbers are same
 
 
 var myBadSingleton = (function(){
@@ -47,6 +49,8 @@ var myBadSingleton = (function(){
         }
     }
 })();
+// this initiates every time, so the values are not same
+
 
 //Usage:
 

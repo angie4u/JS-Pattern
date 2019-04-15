@@ -26,3 +26,5 @@ var SingletonTester = (function(){
 var singletonTest = SingletonTester.getInstance({pointX:5});
 
 console.log(singletonTest.pointX);
+
+// Is this example means that can we change the values later?
