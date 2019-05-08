@@ -1,8 +1,14 @@
 function ObserverList(){
-    this.observerList = [];
+    this.observerList = [
+        // {Update:()=>{console.log("hihi")}},
+        // {Update:()=>{console.log("hihi2")}}
+    ];
+
 }
 
+// observers.. 
 ObserverList.prototype.Add = function(obj){
+    // obj -> each observer
     return this.observerList.push(obj);
 }
 
@@ -90,18 +96,26 @@ var controlCheckbox = document.getElementById("mainCheckbox");
 
 extend(new Subject(), controlCheckbox);
 controlCheckbox["onclick"] = new Function("controlCheckbox.Notify(controlCheckbox.checked)");
+//console.log("hi: ",controlCheckbox.observers);
 addBtn["onclick"] = AddNewObserver;
+
+var counter = 0;
 
 function AddNewObserver(){
     var check = document.createElement("input");
     check.type = "checkbox";
-
+    counter++;
+    //debugger;
     extend(new Observer(), check);
-
-    check.Update = function(value){
-        this.checked = value;
+    
+    check.Update = (value)=>{
+        this.checked = value;        
+        
     }
-
+    check.onclick = (e)=>{
+        //e.preventDefault();
+        console.log(`update from counter:${counter}`);
+    }
     controlCheckbox.AddObserver(check);
     container.appendChild(check);
 }
