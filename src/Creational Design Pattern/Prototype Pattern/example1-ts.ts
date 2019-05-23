@@ -1,6 +1,9 @@
 class Address
 {
-    constructor(streetAddress, city, country)
+    public streetAddress: string;
+    public city: string;
+    public country: string;
+    constructor(streetAddress: string, city: string, country: string)
     {
         this.streetAddress = streetAddress;
         this.city = city;
@@ -25,7 +28,9 @@ class Address
 
 class Person
 {
-    constructor(name, address)
+    public name: string;
+    public address: Address;
+    constructor(name: string, address: Address)
     {
         this.name = name;
         this.address = address;
@@ -43,13 +48,15 @@ class Person
     }
 }
 
-let john = new Person('John',
-    new Address('123 London Road', 'London', 'UK'));
+export const exampleTest = () => {
+    let john = new Person('John',
+        new Address('123 London Road', 'London', 'UK'));
 
-let jane = john.deepCopy();
+    let jane = john.deepCopy();
 
-jane.name = 'Jane';
-jane.address.streetAddress = '321 Angel St';
+    jane.name = 'Jane';
+    jane.address.streetAddress = '321 Angel St';
 
-console.log(john.toString());
-console.log(jane.toString());
+    console.log(john.toString());
+    console.log(jane.toString());
+}

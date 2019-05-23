@@ -26,5 +26,6 @@ var start = new Point(2, 3);
 var end = new Point(4, 5);
 var line1 = new Line(start, end);
 var line2 = line1.deepCopy();
+line2.start = new Point(6, 7);
 console.log(line1.toString());
 console.log(line2.toString());

@@ -35,16 +35,19 @@ class Line
     );
   }
 
-  toString(){
-      return `Start point: ${start.x}, ${start.y}, End point: ${end.x}, ${end.y}`;
+  toString = () => {
+      return `Start point: ${this.start.x}, ${this.start.y}, End point: ${this.end.x}, ${this.end.y}`;
   }
 }
 
-let start = new Point(2,3);
-let end = new Point(4,5);
-let line1 = new Line(start, end);
+export const practiceTest = () => {
+  const start = new Point(2,3);
+  const end = new Point(4,5);
+  let line1 = new Line(start, end);
 
-let line2 = line1.deepCopy();
+  let line2 = line1.deepCopy();
+  line2.start = new Point(6,7);
 
-console.log(line1.toString());
-console.log(line2.toString());
+  console.log(line1.toString());
+  console.log(line2.toString());
+}

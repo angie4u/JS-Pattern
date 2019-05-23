@@ -1,9 +1,6 @@
 class Address
 {
-    public streetAddress: string;
-    public city: string;
-    public country: string;
-    constructor(streetAddress: string, city: string, country: string)
+    constructor(streetAddress, city, country)
     {
         this.streetAddress = streetAddress;
         this.city = city;
@@ -28,9 +25,7 @@ class Address
 
 class Person
 {
-    public name: string;
-    public address: Address;
-    constructor(name: string, address: Address)
+    constructor(name, address)
     {
         this.name = name;
         this.address = address;
@@ -52,9 +47,11 @@ let john = new Person('John',
     new Address('123 London Road', 'London', 'UK'));
 
 let jane = john.deepCopy();
+//let jane = john;
 
 jane.name = 'Jane';
 jane.address.streetAddress = '321 Angel St';
+
 
 console.log(john.toString());
 console.log(jane.toString());
