@@ -4,6 +4,7 @@ import {
     // observerTest,
     // oSingletonTest,
     practiceTest,
+    serializationTest
     // singletonTest,
 } from './';
 
@@ -20,3 +21,4 @@ import {
 // Prototype
 exampleTest();
 practiceTest();
+serializationTest();
