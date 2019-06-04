@@ -4,8 +4,10 @@ import {
     // observerTest,
     // oSingletonTest,
     practiceTest,
-    serializationTest
+    serializationTest,
     // singletonTest,
+    runTest
+    
 } from './';
 
 // Singleton
@@ -19,6 +21,9 @@ import {
 // mediatorTest();
 
 // Prototype
-exampleTest();
-practiceTest();
-serializationTest();
+// exampleTest();
+// practiceTest();
+// serializationTest();
+
+// Abstract Factory
+runTest();
